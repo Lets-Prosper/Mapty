@@ -239,7 +239,7 @@ class App {
       //   console.log(work.dataset.id);
       // });
       this.#workoutElToUpdate.remove();
-      this.#workoutMarkerToUpdate.remove();
+      // this.#workoutMarkerToUpdate.remove();
       this.#workoutToUpdate = {};
       this.#workoutElToUpdate;
       this.#workoutMarkerToUpdate;
@@ -501,6 +501,7 @@ class App {
   _deletAllWorkouts() {
     const workoutEls = document.querySelectorAll('.workout');
     workoutEls.forEach(work => work.remove());
+    this.#workouts.splice(0, this.#workouts.length);
 
     // Remove markers
     Object.entries(this.mapMarker)
@@ -540,7 +541,7 @@ class App {
   async _getRevGeo(lat, long) {
     try {
       const response = await fetch(
-        `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${long}&apiKey=0d54781621024ad280da270dc5e1ad90`
+        `https://api.geoapify.com/v1/geocode/reverse?lat=${lat}&lon=${long}&apiKey=42f440777f73424aa430be807043e579`
       );
 
       if (!response.ok)

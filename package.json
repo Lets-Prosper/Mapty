@@ -2,7 +2,6 @@
   "name": "mapty",
   "version": "1.0.0",
   "description": "simple application to track your workouts",
-  "main": "script.js",
   "scripts": {
     "build": "parcel build index.html --dist-dir ./dist",
     "start": "parcel index.html"
